@@ -43,7 +43,7 @@
         <h1>Search for Tool You Want</h1>
         <div class="search">
             <form action="/search" method="get">
-                <input type="text" name="q" placeholder="Search tools" id="search">
+                <input type="text" name="q" placeholder="Search Events" id="search">
                 <button style="border: none; " type="submit"><i class="bi bi-search" id="search"></i></button>
             </form>
         </div>
@@ -51,29 +51,30 @@
     </div>
 
     <div class="tools">
-        <% tools.forEach(function(tool){ %>
-            <div class="tool" data-category="<%= tool.category %>">
+        <% events.forEach(function(event){ %>
+            <div class="tool" data-category="<%= event.category %>">
     
                 <div class="img">
     
-                    <img src="/images/uploads/<%= tool.image %>" alt="">
+                    <img src="/images/uploads/<%= event.image %>" alt="">
                 </div>
                 <div class="head-star">
                     <h3>
-                        <%= tool.toolname%>
+                        <%= event.eventname%>
                     </h3>
                    
                 </div>
                 <p>
-                    <%= tool.description%>
+                    <%= event.description%>
+                </p>
+                <p>
+                    <%= event.date%>
                 </p>
     
                 <div class="category">
-                    <a>free</a>
-                    <a>Ai-Based</a>
-                    <a>Website</a>
+                    <a><%= event.type%></a>
                 </div>
-                <a href="<%= tool.link%>" class="btn" target="_blank">
+                <a href="<%= event.link%>" class="btn" target="_blank">
                     <button onclick="">Open Site</button>
                 </a>
     

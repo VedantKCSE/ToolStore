@@ -1,13 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const toolSchema = new Schema({
-   toolname: {
+const eventSchema = new Schema({
+   eventname: {
       type: String,
       required: true
    },
    description: {
       type: String,
+      required: true
+   },
+   type: {
+      type: String,
+      required: true
+   },
+   date: {
+      type: Date,
       required: true
    },
    image: {
@@ -18,10 +26,10 @@ const toolSchema = new Schema({
       type: String,
       required: true
    },
-   category: {
+   club: {
       type: Number,
       required: true,
-      enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      enum: [0, 1, 2, 3, 4, 5]
    },
    user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -37,6 +45,6 @@ const toolSchema = new Schema({
    }
 });
 
-module.exports = mongoose.model('Tool', toolSchema);
+module.exports = mongoose.model('Event', eventSchema);
 
 

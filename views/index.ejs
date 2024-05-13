@@ -27,61 +27,61 @@
         <nav>
             <div class="logo">
                 <img src="/images/software-development.png" alt="" />
-                <a href="/">Tool.<span>Store</span></a>
+                <a href="/">Club Management System (<span>CMS</span>)</a>
             </div>
             <input type="checkbox" id="menu-toggle" />
             <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <ul class="menu">
-                <li><a href="#aboutus">About us</a></li>
-                <li><a href="#howitworks">How Works</a></li>
-                <li><a href="/cateogery">Cateogeries</a></li>
+                <li><a href="/cateogery">All Clubwise Events</a></li>
                 <li><a href="/profile">Profile</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="hero">
-        <h1>Discover The Best Ai-Tools</h1>
-        <h2>Best AI Companies and Tools</h2>
+        <h1>See what's happening</h1>
+        <h2><b>@MGMCOE</b></h2>
+        <h2>Central Portal for all the events</h2>
     
 
         <div class="search">
             <form action="/search" method="get">
-                <input type="text" name="q" placeholder="Search tools" id="search">
+                <input type="text" name="q" placeholder="Search Events" id="search">
                 <button  type="submit"><i class="bi bi-search" ></i></button>
             </form>
         </div>
         
                 <br>
-                <h1>Explore More</h1>
+                <h1>Explore Events</h1>
 
     </div>
 
     <div style="text-decoration: none;" class="tools">
-        <% tools.forEach(function(tool){ %>
+        <% events.forEach(function(event){ %>
 
-            <div class="tool" data-category="<%= tool.category %>">
+            <div class="tool" data-category="<%= event.category %>">
 
                 <div class="img">
 
-                    <img src="/images/uploads/<%= tool.image %>" alt="">
+                    <img src="/images/uploads/<%= event.image %>" alt="">
                 </div>
                 <div class="head-star">
                     <h3>
-                        <%= tool.toolname%>
+                        <%= event.eventname%>
                     </h3>
                 </div>
                 <p>
-                    <%= tool.description%>
+                    <%= event.description%>
+                </p>
+                <p>
+                    <%= event.date%>
                 </p>
 
                 <div class="category">
-                    <a>free</a>
-                    <a>Ai-Based</a>
-                    <a>Website</a>
+                    <a><%= event.type %></a>
                 </div>
-                <a href="<%= tool.link%>" class="btn" target="_blank">
-                    <button onclick="">Open Site</button>
+                <a href="<%= event.link%>" class="btn" target="_blank">
+                    <button onclick="">Register Now</button>
                 </a>
 
             </div>
@@ -89,68 +89,20 @@
 
     </div>
 
-    <section class="aboutus" id="aboutus">
-        <div class="left">
-            <h1><strong>Know</strong> Tool<span>Store</span></h1>
-            <p>
-                <strong>Tool<span>Store</span></strong> is a versatile platform offering a curated collection of digital
-                tools. It's a marketplace or
-                repository that provides users access to diverse software tools, facilitating tasks across various
-                domains such as development, design, productivity, and more
-                <br />
-                <a href="/cateogery">Click here</a> to start Exploreing <strong>Tool<span>Store</span></strong>
-            </p>
-        </div>
-
-        <div class="right">
-            <div>
-                <img src="/images/software-development.png" alt="" />
-            </div>
-        </div>
-    </section>
-
-    <section class="howitworks" id="howitworks">
-        <h1>
-            How it works?
-        </h1>
-        <div class="container">
-            <div class="box">
-                <img src="/images/log-in.png" alt="">
-                <h2><a href="/profile">Log In / Register</a></h2>
-            </div>
-            <div class="box">
-                <img src="/images/explore.png" alt="">
-                <h2><a href="/">Explore Tools</a></h2>
-            </div>
-            <div class="box">
-                <img src="/images/classification.png" alt="">
-                <h2><a href="/cateogery">Explore Cateogeries</a></h2>
-            </div>
-            <div class="box">
-                <img src="/images/exchange.png" alt="">
-                <h2><a href="">Improve Knowledge</a></h2>
-            </div>
-
-        </div>
-    </section>
-
-
-
     <footer>
         <div class="footer">
             <div class="info">
-                <h3>Contact ToolStore</h3>
-                <a href="mailto:ToolStore@gmail.com" class="bi bi-envelope"> ToolStore@gmail.com</a>
+                <h3>Contact CMS</h3>
+                <a href="mailto:CMS@gmail.com" class="bi bi-envelope"> CMS@gmail.com</a>
                 <a href="phone" class="bi bi-phone"> +91 1234567890</a>
-                <a href="address" class="bi bi-geo-alt"> Address</a>
             </div>
 
             <div class="links">
                 <h3>Links</h3>
                 <a href="/">Go to Top</a>
                 <a href="/">Home</a>
-                <a href="/NewTool">Add Tool</a>
-                <a href="/cateogery">Categories</a>
+                <a href="/NewTool">Add Event</a>
+                <a href="/cateogery">Clubwise events</a>
                 <a href="/profile">Profile</a>
             </div>
         </div>
@@ -168,7 +120,7 @@
             </div>
 
             <strong>
-                <p>All Rights Reserved. &copy; Tool<span>Store</span>2023
+                <p>All Rights Reserved. &copy; Club Management System (<span>CMS</span>) 2024
             </strong></p>
 
 

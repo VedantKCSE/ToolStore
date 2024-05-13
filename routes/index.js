@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const userModel = require('./users');
-const toolModel = require('./tools');
+const eventModel = require('./events');
 const passport = require('passport');
 const upload = require('./multer');
 
@@ -12,28 +12,28 @@ passport.use(new localstrategy(userModel.authenticate()));
 
 /* GET home page. */
 router.get('/',isLoggedIn, async function (req, res, next) {
-  const tools = await toolModel.find(); 
-  res.render('index', { tools });
+  const events = await eventModel.find(); 
+  res.render('index', { events });
 });
 
 router.get('/search', async function (req, res, next) {
   const query = req.query.q; // Get the search query from the URL
-  const tools = await toolModel.find({
+  const events = await eventModel.find({
     $or: [
-      { toolname: { $regex: new RegExp(query, 'i') } },
+      { eventname: { $regex: new RegExp(query, 'i') } },
       // { description: { $regex: new RegExp(query, 'i') } }
     ]
   });
-  res.render('search', { tools, query });
+  res.render('search', { events, query });
 });
 
-router.get('/NewTool',isLoggedIn, function (req, res, next) {
-  res.render('AddTool', { title: 'Express' });
+router.get('/NewEvent',isLoggedIn, function (req, res, next) {
+  res.render('AddEvent', { title: 'Express' });
 });
 
 router.get('/cateogery', async function (req, res, next) {
-    const tools = await toolModel.find(); 
-    res.render('cateogery', { tools }); 
+    const events = await eventModel.find(); 
+    res.render('cateogery', { events }); 
 });
 
 router.get('/login', function (req, res, next) {
@@ -46,15 +46,18 @@ router.post('/upload',isLoggedIn, upload.single("file") , async function (req, r
    return res.status(404).send("No file uploaded");
   }
    const user = await userModel.findOne({username:req.session.passport.user});
-  const tool = await toolModel.create({
-      toolname:req.body.toolname,
+  const event = await eventModel.create({
+      eventname:req.body.eventname,
       description:req.body.description,
-      category:req.body.category,
+      type:req.body.type,
+      date:req.body.date,
+      club:req.body.club,
       image:req.file.filename,
       link:req.body.link,
       user:user._id
     })
-    user.tools.push(tool._id);
+    // console.log(event);
+    // user.event.push(event._id);
     user.save();
     res.redirect('/');
   // res.send("File Uploaded");

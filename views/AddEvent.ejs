@@ -23,7 +23,7 @@
         <nav>
             <div class="logo">
                 <img src="/images/software-development.png" alt="">
-                <a href="/">Tool.<span>Store</span></a>
+                <a href="/">Club Management System (<span>CMS</span>)</a>
             </div>
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">&#9776;</label>
@@ -38,25 +38,22 @@
     <form id="UploadForm" action="/upload" method="post" enctype="multipart/form-data">
         <div>
             <a href="/"><img src="/images/software-development.png" alt="Profile Image"></a>
-            <h2>Tool.<span>Store</span></h2>
-            <h1>Add a New Tool/Extension</h1>
-            <input type="text" name="toolname" placeholder="Name of Tool/Extension" required>
-            <input type="text" name="description" placeholder="Short Discription  " required>
-            <input type="file" name="file" placeholder="choose Img" required>
-            <input type="text" name="link" placeholder="Paste a link here" required>
+            <h2>Club Management System (<span>CMS</span>)</h2>
+            <h1>Add a New Club Event</h1>
+            <input type="text" name="eventname" placeholder="Title" required>
+            <input type="text" name="description" placeholder="Description" required>
+            <input type="date" name="date" placeholder="Date" required>
+            <input type="text" name="type" placeholder="Type" required>
+            <input type="file" name="file" placeholder="Event Poster" required>
+            <input type="text" name="link" placeholder="Registration Link" required>
 
-            <select type="text" name="category" placeholder="select the cateogery of your Tool">
-                <option value="0">select Cateogery from Below</option>
-                <option value="1">Text Tools</option>
-                <option value="2">Image Tools </option>
-                <option value="3">Business Tools</option>
-                <option value="4">Coding Tools</option>
-                <option value="5">Marketing Tools</option>
-                <option value="6">Educational Tools</option>
-                <option value="7">Extensions Tools</option>
-                <option value="8">Productivity Tools</option>
-                <option value="8">Presentation Tools</option>
-                <option value="10">Miscellaneous Tools</option>
+            <select type="text" name="club" placeholder="select the cateogery of your Tool">
+                <option value="0">select club from below</option>
+                <option value="1">Computer User's Club</option>
+                <option value="2">IEI Students'Chapter</option>
+                <option value="3">GDSC</option>
+                <option value="4">Training</option>
+                <option value="5">Others</option>
             </select>
             <button type="submit">Upload</button>
         </div>
@@ -64,39 +61,40 @@
     <footer>
         <div class="footer">
             <div class="info">
-                <h3>Contact ToolStore</h3>
-                <a href="mailto:ToolStore@gmail.com" class="bi bi-envelope"> ToolStore@gmail.com</a>
+                <h3>Contact CMS</h3>
+                <a href="mailto:CMS@gmail.com" class="bi bi-envelope"> CMS@gmail.com</a>
                 <a href="phone" class="bi bi-phone"> +91 1234567890</a>
-                <a href="address" class="bi bi-geo-alt"> Address</a>
             </div>
-
+    
             <div class="links">
                 <h3>Links</h3>
                 <a href="/">Go to Top</a>
                 <a href="/">Home</a>
-                <a href="/NewTool">Add Tool</a>
-                <a href="/cateogery">Categories</a>
+                <a href="/NewTool">Add Event</a>
+                <a href="/cateogery">Clubwise events</a>
                 <a href="/profile">Profile</a>
             </div>
         </div>
-
+    
         <div class="footer-bottom">
-
-
+    
+    
             <!-- add toolstore -->
             <div class="social">
                 <a href=""><i class="bi bi-facebook"></i></a>
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-instagram"></i></a>
                 <a href=""><i class="bi bi-linkedin"></i></a>
-
+    
             </div>
-
-           <strong> <p>All Rights Reserved. &copy; Tool<span>Store</span>2023</strong></p>
-
-
+    
+            <strong>
+                <p>All Rights Reserved. &copy; Club Management System (<span>CMS</span>) 2024
+            </strong></p>
+    
+    
         </div>
-
+    
     </footer>
 
     <script src="/javascripts/category.js"></script>
